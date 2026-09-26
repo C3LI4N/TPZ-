@@ -1,12 +1,12 @@
 // ============================================================
-//  TPZ+ - Configuration des flux
+//  TPZ+ — Configuration des flux
 //  Ajoute / modifie tes matchs ici. Aucun autre fichier à toucher.
 // ============================================================
 
 window.TPZ_STREAMS = [
     {
-        id: "qatar-iran",
-        nom: "BAHREIN 🆚 HONK KONG",
+        id: "bahrein-hong kong",
+        nom: "BAHREIN 🆚 HONG KONG",
         sport: "⚽ Football",
         competition: "Asian Games",
         image: "",
@@ -15,7 +15,7 @@ window.TPZ_STREAMS = [
         visible: true,
         forceLive: true,
         langues: [
-            { code: "FR", label: "Français", url: "https://nadia67bc.mp77g69ainei3gx2voxygen.ru/fr/handball/asian-games-2232218/bahrain-vs-hong-kong.html?icg=RlI" }
+            { code: "FR", label: "Français", url: "https://nadia67bc.mp77g69ainei3gx2voxygen.ru/fr/handball/asian-games-2232218/bahrain-vs-hong-kong.html?icg=RlI&ilang=fr" }
         ]
     },
     {
@@ -50,7 +50,5 @@ window.TPZ_STREAMS = [
 
 // ── Réglages généraux ──
 window.TPZ_CONFIG = {
-    viewersRefresh: 60000,
-    discord: "https://discord.com/invite/9hDDERzTJe",
-    telegram: "https://t.me/+ZwJc5nqhevYyMzM0"
+    viewersRefresh: 60000
 };

@@ -1,0 +1,18 @@
+{
+  "name": "TPZ+ - Streaming Sportif",
+  "short_name": "TPZ+",
+  "description": "Streaming sportif en direct — TPZ+",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0c",
+  "theme_color": "#38bdf8",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
