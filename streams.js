@@ -57,7 +57,7 @@ window.TPZ_STREAMS = [
         visible: true,
         forceLive: false,
         langues: [
-            { code: "FR", label: "Français", url: "https://jack43eo.mpgreatestclgczbmiddle.my/fr/football/uefa-nations-league-4376862/wales-vs-norway.html?icg=RlI&ilang=fr" }
+            { code: "FR", label: "Français", url: "" }
         ]
     },
 {

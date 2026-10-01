@@ -13,7 +13,7 @@
     <meta name="apple-mobile-web-app-title" content="TPZ+">
     <link rel="manifest" href="../site.webmanifest">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -27,6 +27,7 @@
             --text-mute: #6b6b6b;
             --red: #dc314e;
             --red-hover: #f46e84;
+            --nav-height: 64px;
         }
         * { box-sizing: border-box; }
         html, body { margin: 0; padding: 0; }
@@ -42,40 +43,56 @@
         /* ── NAVBAR ── */
         header {
             padding: 0 24px;
-            height: 58px;
+            height: var(--nav-height);
             background: rgba(10,10,10,0.85);
-            backdrop-filter: blur(16px) saturate(180%);
-            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid var(--border);
             display: flex; justify-content: space-between; align-items: center;
             position: sticky; top: 0; z-index: 100;
+            gap: 12px;
         }
         .brand {
             display: flex; align-items: center; gap: 6px;
             font-weight: 900;
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             font-style: italic;
             letter-spacing: -0.5px;
             text-transform: uppercase;
             text-decoration: none;
             color: var(--text);
+            flex-shrink: 0;
         }
         .brand .plus { color: var(--red); }
+
+        /* ══════════════════════════════════════
+           BOUTON RETOUR — rose rouge visible
+           ══════════════════════════════════════ */
         header a.back {
-            color: var(--text-dim);
+            background: var(--red);
+            color: white;
             text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 6px 14px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            font-style: italic;
+            padding: 9px 20px;
+            border: none;
+            border-radius: 50px;
             transition: 0.2s;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 16px rgba(220,49,78,0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
         header a.back:hover {
-            color: var(--text);
-            border-color: var(--border-strong);
+            background: var(--red-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 22px rgba(220,49,78,0.55);
+        }
+        header a.back:active {
+            transform: translateY(0);
         }
 
         /* ── WRAPPER ── */
@@ -108,8 +125,8 @@
         }
         .match-meta span {
             background: var(--bg-alt);
-            padding: 5px 12px;
-            border-radius: 4px;
+            padding: 6px 14px;
+            border-radius: 50px;
             border: 1px solid var(--border);
             font-weight: 600;
             color: var(--text-dim);
@@ -134,7 +151,7 @@
         .player-wrap { position: relative; width: 100%; }
         .player-box {
             background: #000;
-            border-radius: 8px;
+            border-radius: 18px;
             overflow: hidden;
             border: 1px solid var(--border);
             width: 100% !important;
@@ -164,8 +181,8 @@
             z-index: 5;
             pointer-events: auto;
         }
-        .click-shield.top    { top: 0;    height: 10%; }
-        .click-shield.bottom { bottom: 0; height: 3%;  }
+        .click-shield.top    { top: 0;    height: 12%; }
+        .click-shield.bottom { bottom: 0; height: 4%;  }
         .player-wrap.langues-open .click-shield { display: none; }
 
         /* ── BOUTONS ── */
@@ -178,8 +195,8 @@
             background: var(--red);
             color: white;
             border: none;
-            padding: 12px 26px;
-            border-radius: 4px;
+            padding: 12px 28px;
+            border-radius: 50px;
             font-family: inherit;
             font-weight: 700;
             font-style: italic;
@@ -189,16 +206,21 @@
             text-transform: uppercase;
             transition: 0.2s;
             display: inline-flex; align-items: center; gap: 8px;
+            box-shadow: 0 4px 16px rgba(220,49,78,0.35);
         }
-        .btn-action:hover { background: var(--red-hover); }
+        .btn-action:hover {
+            background: var(--red-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(220,49,78,0.5);
+        }
         .btn-action.hidden { display: none !important; }
 
         /* ── INFO BOX ── */
         .info-box {
             margin-top: 24px;
             background: var(--bg-alt);
-            padding: 18px 20px;
-            border-radius: 8px;
+            padding: 18px 22px;
+            border-radius: 16px;
             border: 1px solid var(--border);
             font-size: 0.82rem;
             color: var(--text-dim);
@@ -222,8 +244,8 @@
         }
         .error code {
             background: var(--bg-alt);
-            padding: 3px 10px;
-            border-radius: 4px;
+            padding: 4px 14px;
+            border-radius: 50px;
             color: var(--text);
             font-size: 0.82rem;
             border: 1px solid var(--border);
@@ -233,8 +255,8 @@
             margin-top: 24px;
             color: white;
             background: var(--red);
-            padding: 11px 28px;
-            border-radius: 4px;
+            padding: 12px 30px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-style: italic;
@@ -242,33 +264,43 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: 0.2s;
+            box-shadow: 0 4px 16px rgba(220,49,78,0.35);
         }
-        .error a:hover { background: var(--red-hover); }
+        .error a:hover {
+            background: var(--red-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(220,49,78,0.5);
+        }
 
         /* ── FOOTER ── */
         footer {
-            padding: 20px 24px;
+            padding: 22px 24px;
             border-top: 1px solid var(--border);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             background: var(--bg);
         }
         .footer-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 18px;
+            gap: 6px;
         }
         .footer-links a {
             color: var(--text-dim);
             text-decoration: none;
             font-size: 0.75rem;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.2s, background 0.2s;
+            padding: 6px 14px;
+            border-radius: 50px;
         }
-        .footer-links a:hover { color: var(--text); }
+        .footer-links a:hover {
+            color: var(--text);
+            background: rgba(255,255,255,0.05);
+        }
         footer p {
             margin: 0;
             font-size: 0.72rem;
@@ -276,22 +308,33 @@
         }
         footer p .made { color: var(--red); font-weight: 700; font-style: italic; }
 
-        /* ── MOBILE ── */
+        /* ══════════════════════════════════════
+           RESPONSIVE MOBILE
+           ══════════════════════════════════════ */
         @media (max-width: 700px) {
-            header { padding: 0 16px; }
-            .brand { font-size: 1rem; }
-            header a.back { padding: 5px 10px; font-size: 0.68rem; }
+            :root { --nav-height: 58px; }
+            header { padding: 0 14px; gap: 8px; }
+            .brand { font-size: 1rem; letter-spacing: -0.3px; }
+            header a.back {
+                padding: 7px 14px;
+                font-size: 0.7rem;
+                letter-spacing: 0.5px;
+            }
+
             .wrapper { padding: 16px 14px 30px; }
 
             .match-header { gap: 10px; margin-bottom: 14px; }
             .match-header h2 { font-size: 1.1rem; }
-            .match-meta span { padding: 4px 9px; font-size: 0.66rem; }
+            .match-meta span { padding: 4px 10px; font-size: 0.66rem; }
 
-            .player-box { border-radius: 6px; max-height: 55vh !important; }
-            .click-shield.top { height: 18%; }
+            .player-box { border-radius: 14px; max-height: 55vh !important; }
+
+            /* ═══ CLICK SHIELDS AGRANDIS SUR MOBILE ═══ */
+            .click-shield.top    { height: 28% !important; }
+            .click-shield.bottom { height: 12% !important; }
 
             .btn-action {
-                padding: 10px 18px;
+                padding: 11px 20px;
                 font-size: 0.72rem;
                 width: 100%;
                 justify-content: center;
@@ -302,56 +345,35 @@
                 max-height: 60vh !important;
             }
 
-            .info-box { padding: 14px; font-size: 0.76rem; margin-top: 18px; }
+            .info-box { padding: 14px 16px; font-size: 0.76rem; margin-top: 18px; border-radius: 14px; }
 
-            footer { padding: 18px 16px; }
-            .footer-links { gap: 12px; }
-            .footer-links a { font-size: 0.7rem; }
+            footer { padding: 18px 14px; gap: 10px; }
+            .footer-links { gap: 4px; }
+            .footer-links a { font-size: 0.7rem; padding: 5px 10px; }
             footer p { font-size: 0.66rem; }
         }
 
         @media (max-width: 400px) {
             .match-header h2 { font-size: 0.95rem; }
-            .btn-action { padding: 9px 14px; font-size: 0.66rem; }
+            header a.back { padding: 6px 12px; font-size: 0.65rem; }
+            .btn-action { padding: 10px 16px; font-size: 0.66rem; }
+
+            /* Encore plus grand sur très petits écrans */
+            .click-shield.top    { height: 32% !important; }
+            .click-shield.bottom { height: 14% !important; }
+
             .player-wrap.langues-open .player-box {
                 height: 55vh !important;
                 max-height: 55vh !important;
             }
-.clock {
-    display: flex; flex-direction: column;
-    align-items: flex-end;
-    line-height: 1;
-}
-.clock .time {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--text);
-}
-.clock .date {
-    font-size: 0.6rem;
-    font-weight: 600;
-    color: var(--text-mute);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-top: 4px;
-}
-@media (max-width: 700px) {
-    .clock .time { font-size: 0.95rem; }
-    .clock .date { font-size: 0.55rem; }
-}
         }
     </style>
 </head>
 <body>
 
     <header>
-    <a href="../index.html" class="brand">TPZ<span class="plus">+</span></a>
-<a href="../index.html" class="back">← Retour</a>
-    <div class="clock">
-        <span class="time" id="tpz-clock">--:--:--</span>
-</div>
+        <a href="../index.html" class="brand">TPZ<span class="plus">+</span></a>
+        <a href="../index.html" class="back">← Retour</a>
     </header>
 
     <div class="wrapper" id="app">
@@ -365,10 +387,7 @@
             <a href="../mentions.html">Privacy Policy</a>
             <a href="../index.html">Accueil</a>
         </div>
-        <p>
-            <span id="tpz-clock">--:--:--</span> ·
-            TPZ+ — Made by <span class="made">C3LI4N</span> with Deepseek
-        </p>
+        <p>TPZ+ — Made by <span class="made">C3LI4N</span> with Deepseek</p>
     </footer>
 
     <script src="../streams.js"></script>
@@ -489,18 +508,6 @@
                 }
             }
         }
-
-        (function(){
-            function tick(){
-                const el = document.getElementById('tpz-clock');
-                if (!el) return;
-                const d = new Date();
-                const f = n => n < 10 ? '0' + n : n;
-                el.textContent = `${f(d.getHours())}:${f(d.getMinutes())}:${f(d.getSeconds())}`;
-            }
-            tick();
-            setInterval(tick, 1000);
-        })();
 
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.onkeydown = function(e) {
