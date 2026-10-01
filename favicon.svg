@@ -1,7 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="100" fill="#0a0a0c"/>
-  <text x="256" y="345" font-family="Orbitron, Arial, sans-serif" font-weight="900"
-        font-size="220" fill="#ffffff" text-anchor="middle" letter-spacing="10">TPZ</text>
-  <text x="440" y="345" font-family="Orbitron, Arial, sans-serif" font-weight="900"
-        font-size="180" fill="#38bdf8" text-anchor="middle">+</text>
+  <!-- Fond noir arrondi -->
+  <rect width="512" height="512" rx="110" fill="#0a0a0a"/>
+
+  <!-- Bordure subtile -->
+  <rect x="4" y="4" width="504" height="504" rx="106"
+        fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+
+  <!-- "TPZ" en blanc italic, très serré -->
+  <text x="180" y="320"
+        font-family="Inter, Arial, sans-serif"
+        font-weight="900"
+        font-style="italic"
+        font-size="200"
+        fill="#ffffff"
+        text-anchor="middle"
+        letter-spacing="-8">TPZ</text>
+
+  <!-- "+" en rouge à droite -->
+  <text x="382" y="320"
+        font-family="Inter, Arial, sans-serif"
+        font-weight="900"
+        font-style="italic"
+        font-size="200"
+        fill="#dc314e"
+        text-anchor="middle">+</text>
 </svg>
