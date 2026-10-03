@@ -909,9 +909,7 @@
 
                         cont.innerHTML = channels.map(ch => {
                 const isOnline = ch.status === 'online';
-                const link = isOnline
-                    ? `/channels-player.html?name=${encodeURIComponent(ch.name)}&url=${encodeURIComponent(ch.url)}&img=${encodeURIComponent(ch.image)}`
-                    : '#';
+
                                 const link = isOnline
                     ? `/channels-player.html?name=${encodeURIComponent(ch.name)}&url=${encodeURIComponent(ch.url)}`
                     : '#';
