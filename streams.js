@@ -1,82 +1,44 @@
-// ============================================================
-//  TPZ+ — Configuration des flux
-//  Ajoute / modifie tes matchs ici. Aucun autre fichier à toucher.
-// ============================================================
-
 window.TPZ_STREAMS = [
     {
-        id: "azerbaidjan-liechstenstein",
-        nom: "AZERBAIDJAN 🆚 LIECHSTENSTEIN",
-        sport: "SPORTS",
-        competition: "UEFA NATIONS LEAGUE",
+        id: "qatar-iran",
+        nom: "QATAR 🆚 IRAN",
+        sport: "⚽ Football",
+        competition: "Asian Games",
         image: "",
-        heureDebut: "2026-10-01T18:00:00+02:00",
+        heureDebut: "2026-10-04T09:00:00+02:00",
         priorite: 1,
         visible: true,
         forceLive: true,
         langues: [
-            { code: "FR", label: "Français", url: "https://jack43eo.mpgreatestclgczbmiddle.my/fr/football/uefa-nations-league-4376286/azerbaijan-vs-liechtenstein.html?icg=RlI&ilang=fr" }
+            { code: "FR", label: "Français", url: "https://jack41eo.mpgreatestclgczbmiddle.my/fr/handball/asian-games-2232217/qatar-vs-iran.html?icg=RlI&ilang=fr" }
         ]
     },
     {
-        id: "allemagne-serbie",
-        nom: "ALLEMAGNE 🆚 SERBIE",
-        sport: "SPORTS",
-        competition: "UEFA NATIONS LEAGUE",
+        id: "real-barca",
+        nom: "Real 🆚 Barça",
+        sport: "⚽ Football",
+        competition: "Liga",
         image: "",
-        heureDebut: "2026-10-01T20:45:00+02:00",
+        heureDebut: "2026-09-27T22:00:00+02:00",
         priorite: 2,
         visible: true,
         forceLive: false,
         langues: [
-            { code: "FR", label: "Français", url: "https://jack43eo.mpgreatestclgczbmiddle.my/fr/football/uefa-nations-league-4377735/germany-vs-serbia.html?icg=RlI&ilang=fr" }
+            { code: "FR", label: "Français", url: "https://ton-lien-stream2.m3u8" }
         ]
     },
     {
-        id: "grece-paysbas",
-        nom: "GRECE 🆚 PAYS-BAS",
-        sport: "SPORTS",
-        competition: "UEFA NATIONS LEAGUE",
+        id: "lakers-celtics",
+        nom: "Lakers 🆚 Celtics",
+        sport: "🏀 Basket",
+        competition: "NBA",
         image: "",
-        heureDebut: "2026-10-01T20:45:00+02:00",
+        heureDebut: "2026-09-28T02:00:00+02:00",
         priorite: 3,
         visible: true,
         forceLive: false,
         langues: [
-            { code: "FR", label: "Français", url: "https://jack43eo.mpgreatestclgczbmiddle.my/fr/football/uefa-nations-league-4377734/greece-vs-netherlands.html?icg=RlI&ilang=fr" }
-        ]
-    },
-{
-        id: "paysdegalles-norvege",
-        nom: "PAYS DE GALLE 🆚 NORVEGE",
-        sport: "SPORTS",
-        competition: "UEFA NATIONS LEAGUE",
-        image: "",
-        heureDebut: "2026-10-01T20:45:00+02:00",
-        priorite: 3,
-        visible: true,
-        forceLive: false,
-        langues: [
-            { code: "FR", label: "Français", url: "" }
-        ]
-    },
-{
-        id: "danemark-portugal",
-        nom: "DANEMARK 🆚 PORTUGAL",
-        sport: "SPORTS",
-        competition: "UEFA NATIONS LEAGUE",
-        image: "",
-        heureDebut: "2026-10-01T20:45:00+02:00",
-        priorite: 3,
-        visible: true,
-        forceLive: false,
-        langues: [
-            { code: "FR", label: "Français", url: "https://jack43eo.mpgreatestclgczbmiddle.my/fr/football/uefa-nations-league-4376860/denmark-vs-portugal.html?icg=RlI&ilang=fr" }
+            { code: "FR", label: "Français", url: "https://ton-lien-stream3.m3u8" }
         ]
     }
 ];
-
-// ── Réglages généraux ──
-window.TPZ_CONFIG = {
-    viewersRefresh: 60000
-};

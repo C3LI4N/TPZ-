@@ -1,27 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Fond noir arrondi -->
-  <rect width="512" height="512" rx="110" fill="#0a0a0a"/>
-
-  <!-- Bordure subtile -->
-  <rect x="4" y="4" width="504" height="504" rx="106"
-        fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
-
-  <!-- "TPZ" en blanc italic, très serré -->
-  <text x="180" y="320"
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="115" fill="url(#g)"/>
+  <rect x="5" y="5" width="502" height="502" rx="110"
+        fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="3"/>
+  <text x="185" y="325"
         font-family="Inter, Arial, sans-serif"
         font-weight="900"
         font-style="italic"
-        font-size="200"
+        font-size="205"
         fill="#ffffff"
         text-anchor="middle"
-        letter-spacing="-8">TPZ</text>
-
-  <!-- "+" en rouge à droite -->
-  <text x="382" y="320"
+        letter-spacing="-10">TPZ</text>
+  <text x="400" y="325"
         font-family="Inter, Arial, sans-serif"
         font-weight="900"
         font-style="italic"
-        font-size="200"
+        font-size="205"
         fill="#dc314e"
         text-anchor="middle">+</text>
 </svg>

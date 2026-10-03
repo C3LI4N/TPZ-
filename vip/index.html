@@ -5,29 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TPZ+ - Lecture</title>
 
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="apple-touch-icon" href="../favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
     <meta name="theme-color" content="#0a0a0a">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="TPZ+">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg: #0a0a0a;
-            --bg-alt: #131313;
-            --bg-elev: #1a1a1a;
-            --border: rgba(255,255,255,0.08);
-            --border-strong: rgba(255,255,255,0.15);
+            --bg: #08080a;
+            --bg-alt: #101014;
+            --bg-elev: #16161c;
+            --bg-glass: rgba(22, 22, 28, 0.65);
+            --border: rgba(255,255,255,0.07);
+            --border-strong: rgba(255,255,255,0.16);
             --text: #ffffff;
-            --text-dim: #9a9a9a;
-            --text-mute: #6b6b6b;
+            --text-dim: #9a9aa4;
+            --text-mute: #5a5a64;
             --red: #dc314e;
             --red-hover: #f46e84;
+            --red-glow: rgba(220,49,78,0.35);
             --nav-height: 64px;
+            --radius: 20px;
+            --radius-sm: 14px;
         }
         * { box-sizing: border-box; }
         html, body { margin: 0; padding: 0; }
@@ -38,15 +43,26 @@
             min-height: 100vh;
             display: flex; flex-direction: column;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
+        body::before {
+            content: "";
+            position: fixed; inset: 0;
+            background:
+                radial-gradient(ellipse 55% 45% at 15% 0%, rgba(220,49,78,0.08), transparent 60%),
+                radial-gradient(ellipse 50% 40% at 100% 100%, rgba(103,232,249,0.05), transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        body > * { position: relative; z-index: 1; }
 
         /* ── NAVBAR ── */
         header {
-            padding: 0 24px;
+            padding: 0 28px;
             height: var(--nav-height);
-            background: rgba(10,10,10,0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background: rgba(8,8,10,0.75);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
             border-bottom: 1px solid var(--border);
             display: flex; justify-content: space-between; align-items: center;
             position: sticky; top: 0; z-index: 100;
@@ -55,44 +71,37 @@
         .brand {
             display: flex; align-items: center; gap: 6px;
             font-weight: 900;
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-style: italic;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.6px;
             text-transform: uppercase;
             text-decoration: none;
             color: var(--text);
-            flex-shrink: 0;
         }
         .brand .plus { color: var(--red); }
 
-        /* ══════════════════════════════════════
-           BOUTON RETOUR — rose rouge visible
-           ══════════════════════════════════════ */
         header a.back {
-            background: var(--red);
+            background: linear-gradient(135deg, var(--red) 0%, #b02240 100%);
             color: white;
             text-decoration: none;
             font-size: 0.78rem;
-            font-weight: 700;
+            font-weight: 800;
             font-style: italic;
-            padding: 9px 20px;
+            padding: 10px 22px;
             border: none;
             border-radius: 50px;
             transition: 0.2s;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            box-shadow: 0 4px 16px rgba(220,49,78,0.4);
+            box-shadow: 0 6px 20px var(--red-glow);
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
         header a.back:hover {
-            background: var(--red-hover);
+            background: linear-gradient(135deg, var(--red-hover) 0%, var(--red) 100%);
             transform: translateY(-1px);
-            box-shadow: 0 6px 22px rgba(220,49,78,0.55);
-        }
-        header a.back:active {
-            transform: translateY(0);
+            box-shadow: 0 10px 26px rgba(220,49,78,0.55);
         }
 
         /* ── WRAPPER ── */
@@ -101,22 +110,22 @@
             width: 100%;
             max-width: 1600px;
             margin: 0 auto;
-            padding: 28px 24px 40px;
+            padding: 32px 28px 50px;
         }
 
         /* ── MATCH HEADER ── */
         .match-header {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             display: flex; flex-wrap: wrap;
             align-items: center; justify-content: space-between;
-            gap: 12px;
+            gap: 14px;
         }
         .match-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.65rem;
+            font-weight: 900;
             font-style: italic;
             text-transform: uppercase;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.8px;
             margin: 0;
         }
         .match-meta {
@@ -124,26 +133,28 @@
             font-size: 0.72rem;
         }
         .match-meta span {
-            background: var(--bg-alt);
-            padding: 6px 14px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            padding: 7px 16px;
             border-radius: 50px;
             border: 1px solid var(--border);
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-dim);
             text-transform: uppercase;
             letter-spacing: 0.8px;
         }
         .live-tag {
             color: var(--red) !important;
-            border-color: rgba(220,49,78,0.3) !important;
-            background: rgba(220,49,78,0.08) !important;
-            display: inline-flex; align-items: center; gap: 6px;
+            border-color: rgba(220,49,78,0.35) !important;
+            background: rgba(220,49,78,0.1) !important;
+            display: inline-flex; align-items: center; gap: 7px;
         }
         .live-tag .dot {
             width: 6px; height: 6px;
             background: var(--red);
             border-radius: 50%;
             animation: blink 1.2s infinite;
+            box-shadow: 0 0 8px var(--red);
         }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
 
@@ -151,9 +162,10 @@
         .player-wrap { position: relative; width: 100%; }
         .player-box {
             background: #000;
-            border-radius: 18px;
+            border-radius: var(--radius);
             overflow: hidden;
             border: 1px solid var(--border);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
             width: 100% !important;
             height: auto !important;
             min-height: 0 !important;
@@ -187,42 +199,43 @@
 
         /* ── BOUTONS ── */
         .player-actions {
-            margin-top: 16px;
+            margin-top: 20px;
             display: flex; gap: 10px; flex-wrap: wrap;
             justify-content: center;
         }
         .btn-action {
-            background: var(--red);
+            background: linear-gradient(135deg, var(--red) 0%, #b02240 100%);
             color: white;
             border: none;
-            padding: 12px 28px;
+            padding: 13px 30px;
             border-radius: 50px;
             font-family: inherit;
-            font-weight: 700;
+            font-weight: 800;
             font-style: italic;
             font-size: 0.8rem;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
             cursor: pointer;
             text-transform: uppercase;
             transition: 0.2s;
             display: inline-flex; align-items: center; gap: 8px;
-            box-shadow: 0 4px 16px rgba(220,49,78,0.35);
+            box-shadow: 0 6px 20px var(--red-glow);
         }
         .btn-action:hover {
-            background: var(--red-hover);
+            background: linear-gradient(135deg, var(--red-hover) 0%, var(--red) 100%);
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(220,49,78,0.5);
+            box-shadow: 0 10px 26px rgba(220,49,78,0.55);
         }
         .btn-action.hidden { display: none !important; }
 
         /* ── INFO BOX ── */
         .info-box {
-            margin-top: 24px;
-            background: var(--bg-alt);
-            padding: 18px 22px;
-            border-radius: 16px;
+            margin-top: 28px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            padding: 20px 24px;
+            border-radius: var(--radius);
             border: 1px solid var(--border);
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             color: var(--text-dim);
             line-height: 1.6;
         }
@@ -231,16 +244,16 @@
         /* ── ERREUR ── */
         .error {
             text-align: center;
-            padding: 80px 20px;
+            padding: 90px 20px;
         }
         .error h2 {
-            font-size: 1.4rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            font-weight: 900;
             font-style: italic;
             color: var(--red);
             margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.5px;
         }
         .error code {
             background: var(--bg-alt);
@@ -252,34 +265,33 @@
         }
         .error a {
             display: inline-block;
-            margin-top: 24px;
+            margin-top: 26px;
             color: white;
-            background: var(--red);
-            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--red) 0%, #b02240 100%);
+            padding: 13px 32px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             font-style: italic;
             font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
             transition: 0.2s;
-            box-shadow: 0 4px 16px rgba(220,49,78,0.35);
+            box-shadow: 0 6px 20px var(--red-glow);
         }
         .error a:hover {
-            background: var(--red-hover);
+            background: linear-gradient(135deg, var(--red-hover) 0%, var(--red) 100%);
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(220,49,78,0.5);
         }
 
         /* ── FOOTER ── */
         footer {
-            padding: 22px 24px;
+            padding: 26px 24px;
             border-top: 1px solid var(--border);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             background: var(--bg);
         }
         .footer-links {
@@ -312,29 +324,29 @@
            RESPONSIVE MOBILE
            ══════════════════════════════════════ */
         @media (max-width: 700px) {
-            :root { --nav-height: 58px; }
-            header { padding: 0 14px; gap: 8px; }
-            .brand { font-size: 1rem; letter-spacing: -0.3px; }
+            :root { --nav-height: 58px; --radius: 16px; }
+            header { padding: 0 16px; gap: 8px; }
+            .brand { font-size: 1.05rem; letter-spacing: -0.4px; }
             header a.back {
-                padding: 7px 14px;
+                padding: 8px 16px;
                 font-size: 0.7rem;
                 letter-spacing: 0.5px;
             }
 
-            .wrapper { padding: 16px 14px 30px; }
+            .wrapper { padding: 20px 14px 40px; }
 
-            .match-header { gap: 10px; margin-bottom: 14px; }
-            .match-header h2 { font-size: 1.1rem; }
-            .match-meta span { padding: 4px 10px; font-size: 0.66rem; }
+            .match-header { gap: 12px; margin-bottom: 16px; }
+            .match-header h2 { font-size: 1.15rem; letter-spacing: -0.5px; }
+            .match-meta span { padding: 5px 12px; font-size: 0.66rem; }
 
             .player-box { border-radius: 14px; max-height: 55vh !important; }
 
-            /* ═══ CLICK SHIELDS AGRANDIS SUR MOBILE ═══ */
+            /* ═══ CLICK SHIELDS AGRANDIS ═══ */
             .click-shield.top    { height: 28% !important; }
             .click-shield.bottom { height: 12% !important; }
 
             .btn-action {
-                padding: 11px 20px;
+                padding: 12px 22px;
                 font-size: 0.72rem;
                 width: 100%;
                 justify-content: center;
@@ -345,20 +357,19 @@
                 max-height: 60vh !important;
             }
 
-            .info-box { padding: 14px 16px; font-size: 0.76rem; margin-top: 18px; border-radius: 14px; }
+            .info-box { padding: 16px 18px; font-size: 0.78rem; margin-top: 20px; }
 
-            footer { padding: 18px 14px; gap: 10px; }
+            footer { padding: 20px 14px; gap: 10px; }
             .footer-links { gap: 4px; }
             .footer-links a { font-size: 0.7rem; padding: 5px 10px; }
             footer p { font-size: 0.66rem; }
         }
 
         @media (max-width: 400px) {
-            .match-header h2 { font-size: 0.95rem; }
-            header a.back { padding: 6px 12px; font-size: 0.65rem; }
-            .btn-action { padding: 10px 16px; font-size: 0.66rem; }
+            .match-header h2 { font-size: 1rem; }
+            header a.back { padding: 7px 12px; font-size: 0.65rem; }
+            .btn-action { padding: 11px 18px; font-size: 0.66rem; }
 
-            /* Encore plus grand sur très petits écrans */
             .click-shield.top    { height: 32% !important; }
             .click-shield.bottom { height: 14% !important; }
 
@@ -372,8 +383,8 @@
 <body>
 
     <header>
-        <a href="../index.html" class="brand">TPZ<span class="plus">+</span></a>
-        <a href="../index.html" class="back">← Retour</a>
+        <a href="/index.html" class="brand">TPZ<span class="plus">+</span></a>
+        <a href="/index.html" class="back">← Retour</a>
     </header>
 
     <div class="wrapper" id="app">
@@ -382,17 +393,16 @@
 
     <footer>
         <div class="footer-links">
-            <a href="../dmca.html">DMCA</a>
-            <a href="../mentions.html">Terms of Service</a>
-            <a href="../mentions.html">Privacy Policy</a>
-            <a href="../index.html">Accueil</a>
+            <a href="/dmca.html">DMCA</a>
+            <a href="/mentions.html">Terms of Service</a>
+            <a href="/mentions.html">Privacy Policy</a>
+            <a href="/index.html">Accueil</a>
         </div>
         <p>TPZ+ — Made by <span class="made">C3LI4N</span> with Deepseek</p>
     </footer>
 
-    <script src="../streams.js"></script>
+    <script src="/streams.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
     <script>
         function getParisTime(dateStr) {
             if (!dateStr) return 0;
@@ -414,9 +424,9 @@
             app.innerHTML = `
                 <div class="error">
                     <h2>❌ Match introuvable</h2>
-                    <p style="color:#9a9a9a">ID demandé : <code>${matchId || '(vide)'}</code></p>
-                    <p style="color:#9a9a9a">IDs dispo : <code>${allIds.join(', ') || '(aucun)'}</code></p>
-                    <a href="../index.html">Retour</a>
+                    <p style="color:#9a9aa4">ID demandé : <code>${matchId || '(vide)'}</code></p>
+                    <p style="color:#9a9aa4">IDs dispo : <code>${allIds.join(', ') || '(aucun)'}</code></p>
+                    <a href="/index.html">Retour</a>
                 </div>`;
         } else {
             const t = getParisTime(match.heureDebut);
@@ -432,10 +442,10 @@
                 app.innerHTML = `
                     <div class="error">
                         <h2>⏳ Pas encore en direct</h2>
-                        <p style="color:#9a9a9a; font-size:1.05rem; font-weight:600">
+                        <p style="color:#9a9aa4; font-size:1.05rem; font-weight:600">
                             Début dans ${d > 0 ? d + 'J ' : ''}${f(h)}H ${f(m)}M ${f(s)}S
                         </p>
-                        <a href="../index.html">Retour</a>
+                        <a href="/index.html">Retour</a>
                     </div>`;
             } else {
                 const url = match.url || (match.langues && match.langues[0] && match.langues[0].url);
