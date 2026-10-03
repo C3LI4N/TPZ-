@@ -190,35 +190,6 @@
         .click-shield.bottom { bottom: 0; height: 4%;  }
         .player-wrap.langues-open .click-shield { display: none; }
 
-        .player-actions {
-            margin-top: 20px;
-            display: flex; gap: 10px; flex-wrap: wrap;
-            justify-content: center;
-        }
-        .btn-action {
-            background: linear-gradient(135deg, var(--red) 0%, #b02240 100%);
-            color: white;
-            border: none;
-            padding: 13px 30px;
-            border-radius: 50px;
-            font-family: inherit;
-            font-weight: 800;
-            font-style: italic;
-            font-size: 0.8rem;
-            letter-spacing: 0.8px;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: 0.2s;
-            display: inline-flex; align-items: center; gap: 8px;
-            box-shadow: 0 6px 20px var(--red-glow);
-        }
-        .btn-action:hover {
-            background: linear-gradient(135deg, var(--red-hover) 0%, var(--red) 100%);
-            transform: translateY(-1px);
-            box-shadow: 0 10px 26px rgba(220,49,78,0.55);
-        }
-        .btn-action.hidden { display: none !important; }
-
         .info-box {
             margin-top: 28px;
             background: var(--bg-glass);
@@ -361,12 +332,6 @@
             .click-shield.top    { height: 28% !important; }
             .click-shield.bottom { height: 12% !important; }
 
-            .btn-action {
-                padding: 12px 22px;
-                font-size: 0.72rem;
-                width: 100%;
-                justify-content: center;
-            }
 
             .player-wrap.langues-open .player-box {
                 height: 60vh !important;
@@ -385,7 +350,6 @@
         @media (max-width: 400px) {
             .match-header h2 { font-size: 1rem; }
             header a.back { padding: 7px 12px; font-size: 0.65rem; }
-            .btn-action { padding: 11px 18px; font-size: 0.66rem; }
 
             .click-shield.top    { height: 32% !important; }
             .click-shield.bottom { height: 14% !important; }
@@ -453,11 +417,6 @@
                     <div class="click-shield bottom"></div>
                 </div>
 
-                <div class="player-actions">
-                    <button class="btn-action" id="btn-langues">🌍 Afficher les langues</button>
-                    <button class="btn-action hidden" id="btn-masquer">✖ Masquer</button>
-                </div>
-
                 <div class="info-box">
                     💡 <strong>Astuce :</strong> si le flux ne se lance pas, recharge la page ou vérifie ta connexion.
                     <br><br>
@@ -469,17 +428,6 @@
 
             const player = document.getElementById('player');
             player.innerHTML = `<iframe src="${decodeURIComponent(channelUrl)}" allowfullscreen allow="autoplay; encrypted-media; fullscreen"></iframe>`;
-
-            const wrap = document.getElementById('player-wrap');
-            const btnLangues = document.getElementById('btn-langues');
-            const btnMasquer = document.getElementById('btn-masquer');
-
-            btnLangues.addEventListener('click', () => {
-                wrap.classList.add('langues-open');
-                btnLangues.classList.add('hidden');
-                btnMasquer.classList.remove('hidden');
-                wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
 
             btnMasquer.addEventListener('click', () => {
                 wrap.classList.remove('langues-open');
