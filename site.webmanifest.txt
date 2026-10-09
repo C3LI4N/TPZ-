@@ -1,16 +1,19 @@
 {
-  "name": "TPZ+ - Streaming Sportif",
+  "name": "TPZ+",
   "short_name": "TPZ+",
-  "description": "Streaming sportif et chaînes TV en direct — TPZ+",
-  "start_url": "/index.html",
+  "description": "Matchs et chaînes en direct",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0a0a0a",
   "theme_color": "#0a0a0a",
-  "orientation": "portrait",
   "lang": "fr",
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+    { "src": "/favicon.svg",     "sizes": "any",     "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/favicon.svg",     "sizes": "any",     "type": "image/svg+xml", "purpose": "maskable" },
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png",     "purpose": "any" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png",     "purpose": "any" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png",     "purpose": "maskable" }
   ]
 }

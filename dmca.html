@@ -1,306 +1,223 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPZ+ — DMCA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TITRE - TPZ+</title>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/favicon.svg">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="TPZ+">
-    <link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="TPZ+">
+<link rel="manifest" href="/site.webmanifest">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --bg: #08080a;
-            --bg-alt: #101014;
-            --bg-glass: rgba(22, 22, 28, 0.65);
-            --border: rgba(255,255,255,0.07);
-            --text: #ffffff;
-            --text-dim: #9a9aa4;
-            --text-mute: #5a5a64;
-            --red: #dc314e;
-            --red-hover: #f46e84;
-            --red-glow: rgba(220,49,78,0.35);
-            --radius: 20px;
-        }
-        * { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; }
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex; flex-direction: column;
-            -webkit-font-smoothing: antialiased;
-        }
-        body::before {
-            content: "";
-            position: fixed; inset: 0;
-            background:
-                radial-gradient(ellipse 55% 45% at 15% 0%, rgba(220,49,78,0.08), transparent 60%),
-                radial-gradient(ellipse 50% 40% at 100% 100%, rgba(103,232,249,0.05), transparent 60%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        body > * { position: relative; z-index: 1; }
+<style>
+:root{
+  --bg:#0a0a0a;
+  --glass:rgba(255,255,255,.02);
+  --hair:rgba(255,255,255,.08);
+  --hair-strong:rgba(255,255,255,.14);
+  --text:#f5f5f5;
+  --text2:#8a8a8a;
+  --text3:#5a5a5a;
+  --red:#ff0033;
+  --red-hover:#e00029;
+  --radius:10px;
+  --radius-sm:6px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--bg)}
+body{
+  font-family:'Inter',-apple-system,system-ui,sans-serif;
+  color:var(--text);
+  font-size:15px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+a{color:var(--text2);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--text)}
 
-        header {
-            padding: 0 28px;
-            height: 64px;
-            background: rgba(8,8,10,0.75);
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-            border-bottom: 1px solid var(--border);
-            display: flex; justify-content: space-between; align-items: center;
-            position: sticky; top: 0; z-index: 100;
-            gap: 12px;
-        }
-        .brand {
-            display: flex; align-items: center; gap: 6px;
-            font-weight: 900;
-            font-size: 1.35rem;
-            font-style: italic;
-            letter-spacing: -0.6px;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--text);
-        }
-        .brand .plus { color: var(--red); }
-        header a.back {
-            background: linear-gradient(135deg, var(--red) 0%, #b02240 100%);
-            color: white;
-            text-decoration: none;
-            font-size: 0.78rem;
-            font-weight: 800;
-            font-style: italic;
-            padding: 10px 22px;
-            border-radius: 50px;
-            transition: 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            box-shadow: 0 6px 20px var(--red-glow);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        header a.back:hover {
-            background: linear-gradient(135deg, var(--red-hover) 0%, var(--red) 100%);
-            transform: translateY(-1px);
-            box-shadow: 0 10px 26px rgba(220,49,78,0.55);
-        }
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 20% 0%, rgba(255,0,51,.06), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 100% 100%, rgba(120,140,255,.04), transparent 60%);
+  pointer-events:none;
+  z-index:0;
+}
+body > *{position:relative;z-index:1}
 
-        .content {
-            flex: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 48px 28px 70px;
-            width: 100%;
-        }
-        .content h1 {
-            font-size: 2rem;
-            font-weight: 900;
-            font-style: italic;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            margin: 0 0 10px 0;
-        }
-        .content .lead {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-            margin: 0 0 36px 0;
-            line-height: 1.65;
-            padding: 20px 24px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-        }
-        .content h3 {
-            font-size: 1rem;
-            font-weight: 800;
-            font-style: italic;
-            text-transform: uppercase;
-            letter-spacing: -0.2px;
-            margin: 36px 0 14px 0;
-            color: var(--text);
-        }
-        .content p, .content li {
-            color: var(--text-dim);
-            font-size: 0.88rem;
-            line-height: 1.75;
-        }
-        .content ul { padding-left: 20px; }
-        .content li { margin-bottom: 6px; }
-        .content a { color: var(--red); text-decoration: none; font-weight: 700; }
-        .content a:hover { text-decoration: underline; }
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  height:60px;
+  padding:0 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  background:rgba(10,10,10,.65);
+  backdrop-filter:blur(18px) saturate(150%);
+  -webkit-backdrop-filter:blur(18px) saturate(150%);
+  border-bottom:1px solid var(--hair);
+}
+.brand{
+  display:flex;
+  align-items:baseline;
+  gap:1px;
+  font-size:17px;
+  font-weight:700;
+  letter-spacing:-.3px;
+  text-decoration:none;
+  color:var(--text);
+}
+.brand .plus{color:var(--red)}
+.back{
+  font-size:13px;
+  color:var(--text2);
+  padding:8px 14px;
+  border:1px solid var(--hair);
+  border-radius:var(--radius-sm);
+  font-weight:500;
+  text-decoration:none;
+  transition:color .2s, border-color .2s;
+}
+.back:hover{color:var(--text);border-color:var(--hair-strong)}
 
-        footer {
-            padding: 26px 24px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-            background: var(--bg);
-        }
-        .external-sources {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            align-items: center;
-            padding: 12px 16px;
-            background: rgba(220,49,78,0.05);
-            border: 1px solid rgba(220,49,78,0.18);
-            border-radius: 50px;
-            font-size: 0.72rem;
-        }
-        .external-sources .label {
-            color: var(--text-mute);
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            font-size: 0.6rem;
-        }
-        .external-sources a {
-            color: var(--red);
-            text-decoration: none;
-            font-weight: 800;
-            font-style: italic;
-            padding: 4px 12px;
-            border-radius: 50px;
-            background: rgba(220,49,78,0.08);
-            border: 1px solid rgba(220,49,78,0.25);
-            transition: 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.7rem;
-        }
-        .external-sources a:hover {
-            background: var(--red);
-            color: white;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 18px var(--red-glow);
-        }
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 6px;
-        }
-        .footer-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: color 0.2s, background 0.2s;
-            padding: 6px 14px;
-            border-radius: 50px;
-        }
-        .footer-links a:hover {
-            color: var(--text);
-            background: rgba(255,255,255,0.05);
-        }
-        footer p {
-            margin: 0;
-            font-size: 0.72rem;
-            color: var(--text-mute);
-        }
-        footer p .made { color: var(--red); font-weight: 700; font-style: italic; }
+main{
+  flex:1;
+  max-width:720px;
+  width:100%;
+  margin:0 auto;
+  padding:40px 24px 60px;
+}
+h1{
+  font-size:22px;
+  font-weight:600;
+  letter-spacing:-.3px;
+  margin:0 0 20px;
+}
+h2{
+  font-size:15px;
+  font-weight:600;
+  margin:28px 0 8px;
+  color:var(--text);
+}
+p,li{color:var(--text2);font-size:14px;margin:0 0 8px}
+ul{padding-left:20px;margin:0 0 12px}
+li{margin-bottom:4px}
+code{
+  background:var(--glass);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:ui-monospace,monospace;
+  color:var(--text);
+  border:1px solid var(--hair);
+}
 
-        @media (max-width: 700px) {
-            header { padding: 0 16px; height: 58px; }
-            .brand { font-size: 1.05rem; }
-            header a.back { padding: 8px 16px; font-size: 0.7rem; }
-            .content { padding: 32px 18px 50px; }
-            .content h1 { font-size: 1.5rem; letter-spacing: -0.6px; }
-            .content .lead { padding: 16px 18px; font-size: 0.82rem; }
-            .content h3 { font-size: 0.92rem; }
-            .content p, .content li { font-size: 0.82rem; }
-            footer { padding: 20px 14px; gap: 10px; }
-            .external-sources { font-size: 0.65rem; padding: 10px 12px; gap: 6px; }
-            .footer-links { gap: 4px; }
-            .footer-links a { font-size: 0.7rem; padding: 5px 10px; }
-        }
-    </style>
+footer{
+  border-top:1px solid var(--hair);
+  padding:24px;
+  font-size:12px;
+  color:var(--text3);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+.foot-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px}
+.foot-nav a{color:var(--text3);text-decoration:none}
+.foot-nav a:hover{color:var(--text2)}
+.foot-sources{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px}
+.foot-sources a{color:var(--text2)}
+
+html.intro .nav{opacity:0;transform:translateY(-9px)}
+html.intro main > *{opacity:0;transform:translateY(12px)}
+html.intro footer{opacity:0}
+.nav, main > *, footer{
+  transition:opacity .6s cubic-bezier(.16,1,.3,1),
+             transform .6s cubic-bezier(.16,1,.3,1);
+}
+
+@media (max-width:700px){
+  .nav{padding:0 14px;height:56px}
+  .brand{font-size:15px}
+  .back{padding:6px 10px;font-size:12px}
+  main{padding:28px 16px 50px}
+  h1{font-size:19px}
+}
+
+/* ══════ CONTENU SPÉCIFIQUE ══════ */
+</style>
+
+<script>
+  document.documentElement.classList.add('intro');
+  setTimeout(() => document.documentElement.classList.remove('intro'), 800);
+</script>
 </head>
 <body>
 
-    <header>
-        <a href="/index.html" class="brand">TPZ<span class="plus">+</span></a>
-        <a href="/index.html" class="back">← Retour</a>
-    </header>
+<nav class="nav">
+  <a href="/" class="brand">TPZ<span class="plus">+</span></a>
+  <a href="/" class="back">Retour</a>
+</nav>
 
-    <div class="content">
-        <h1>DMCA — Demande de retrait</h1>
-        <p class="lead">
-            TPZ+ respecte les droits de propriété intellectuelle. Si vous estimez qu'un contenu
-            référencé sur notre plateforme enfreint vos droits d'auteur, vous pouvez nous adresser
-            une demande de retrait conformément au Digital Millennium Copyright Act (DMCA).
-        </p>
+<main>
+  <h1>Demande de retrait DMCA</h1>
+<p>TPZ+ ne stocke ni ne diffuse de contenu vidéo. Le site référence uniquement des liens vers des sources externes.</p>
 
-        <h3>⚠️ Avertissement important</h3>
-        <p>
-            <strong style="color:#fff">TPZ+ n'héberge, ne stocke et ne diffuse AUCUN contenu vidéo sur ses propres serveurs.</strong>
-            Nous agissons uniquement en tant qu'<strong style="color:#fff">agrégateur de liens externes</strong>.
-            Tous les flux vidéo (matchs et chaînes TV) sont hébergés et diffusés par des plateformes tierces indépendantes :
-        </p>
-        <ul>
-            <li><strong style="color:#fff">FCTV33</strong> — <a href="https://www.fctv33.com/" target="_blank" rel="noopener noreferrer">www.fctv33.com</a></li>
-            <li><strong style="color:#fff">CDN Live TV</strong> — <a href="https://cdnlivetv.is/" target="_blank" rel="noopener noreferrer">cdnlivetv.is</a></li>
-        </ul>
-        <p>
-            Toute demande de retrait concernant un flux doit être <strong style="color:#fff">également adressée à l'hébergeur concerné</strong>.
-        </p>
+<h2>Sources externes</h2>
+<p>Les flux proviennent de plateformes tierces indépendantes :</p>
+<ul>
+  <li><a href="https://www.fctv33.com/" target="_blank" rel="noopener">FCTV33</a></li>
+  <li><a href="https://cdnlivetv.is/" target="_blank" rel="noopener">CDN Live TV</a></li>
+</ul>
+<p>Toute demande concernant un flux doit être adressée directement à la source concernée.</p>
 
-        <h3>Comment nous contacter</h3>
-        <p>Envoyez votre demande avec les éléments ci-dessous :</p>
-        <ul>
-            <li>Vos coordonnées complètes (nom, adresse, email)</li>
-            <li>L'identification précise du contenu protégé concerné</li>
-            <li>L'URL exacte du contenu litigieux sur TPZ+</li>
-            <li>Une déclaration sur l'honneur attestant la bonne foi de votre demande</li>
-            <li>Votre signature (électronique ou manuscrite)</li>
-        </ul>
+<h2>Contacter TPZ+</h2>
+<p>Pour signaler un lien référencé sur ce site, indiquez :</p>
+<ul>
+  <li>Vos coordonnées</li>
+  <li>L'URL exacte du contenu sur TPZ+</li>
+  <li>La description du droit concerné</li>
+  <li>Une déclaration de bonne foi</li>
+</ul>
 
-        <h3>Délai de traitement</h3>
-        <p>Toute demande conforme sera traitée dans un délai de <strong style="color:#fff">72 heures ouvrables</strong>.</p>
+<h2>Délai</h2>
+<p>Les demandes conformes sont traitées sous 72 heures.</p>
 
-        <h3>Sources externes référencées</h3>
-        <p>
-            TPZ+ référence des flux provenant de plusieurs sources publiques externes, notamment :
-        </p>
-        <ul>
-            <li><strong style="color:#fff">FCTV33</strong> — flux sportifs et chaînes en direct</li>
-            <li><strong style="color:#fff">CDN Live TV</strong> — agrégateur de chaînes TV mondiales</li>
-        </ul>
-        <p>
-            Nous ne contrôlons pas le contenu de ces sources et déclinons toute responsabilité quant à
-            leur légalité, leur disponibilité ou leur exactitude.
-        </p>
-    </div>
+<h2>Responsabilité</h2>
+<p>TPZ+ n'exerce aucun contrôle sur les sources externes et décline toute responsabilité concernant leur contenu ou leur disponibilité.</p>
+</main>
 
-    <footer>
-        <div class="external-sources">
-            <span class="label">Sources externes :</span>
-            <a href="https://www.fctv33.com/" target="_blank" rel="noopener noreferrer">FCTV33</a>
-            <a href="https://cdnlivetv.is/" target="_blank" rel="noopener noreferrer">CDN Live TV</a>
-        </div>
-        <div class="footer-links">
-            <a href="/index.html">Accueil</a>
-            <a href="/dmca.html">DMCA</a>
-            <a href="/mentions.html">Mentions légales</a>
-            <a href="/conditions.html">Conditions</a>
-        </div>
-        <p>TPZ+ — Made by <span class="made">C3LI4N</span> with Deepseek</p>
-    </footer>
+<footer>
+  <div class="foot-nav">
+    <a href="/dmca.html">DMCA</a>
+    <a href="/mentions.html">Mentions</a>
+    <a href="/conditions.html">Conditions</a>
+    <a href="/confidentialite.html">Confidentialité</a>
+  </div>
+  <div class="foot-sources">
+    <span>Sources</span>
+    <a href="https://www.fctv33.com/" target="_blank" rel="noopener">FCTV33</a>
+    <a href="https://cdnlivetv.is/" target="_blank" rel="noopener">CDN Live TV</a>
+  </div>
+</footer>
 
 </body>
 </html>
